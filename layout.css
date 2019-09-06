@@ -111,7 +111,7 @@ nav ul a {
 main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 0.2fr 0.2fr 0.2fr;
   grid-auto-rows: minmax(100px, auto);
 }
 
@@ -119,6 +119,10 @@ main {
   main {
     padding-left:15%;
     padding-right:15%;
+  }
+  main .gallery {
+    margin-bottom: -1000px;
+    padding-bottom: -100px
   }
 }
 
@@ -129,14 +133,16 @@ main .top {
 }
 
 main .mid {
+  padding-bottom: 10px;
   grid-column: 1 / 3;
   grid-row: 2;
 }
 
 main .gallery {
-  display: block;
+  display: inline-block;
   position: relative;
-  margin: 0;
+  margin-bottom: 0px;
+  padding-bottom: -10px;
   object-fit: contain;
 }
 
