@@ -1,0 +1,277 @@
+body {
+  font-family: Arial, Helvetica, sans-serif
+}
+
+header {
+  background-color: aqua;
+  text-align: center;
+}
+
+header .logo {
+  display: block;
+  min-width: 200px;
+  min-height: 150px;
+  background-color: white;
+  background-image: url(../svgs/logo_top.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+nav ul {
+  background-color: blue;
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 30px;
+  list-style-type: none;
+}
+
+
+nav ul a {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 100000px) {
+  nav ul {
+    background-color: darkblue;
+    display: inline-block;
+    text-align: center;
+    list-style-type: none;
+    overflow: hidden;
+    min-width: 100%;
+  }
+
+  nav ul li {
+    display: inline-block;
+    margin: 0;
+    padding: 10px 30px;
+  }
+  nav ul li:hover{
+    background-color: white;
+  }
+  nav ul li:hover a{
+    color: darkblue;
+  }
+}
+
+@media (max-width: 100000px) {
+#menu li
+{
+	float: left;
+	margin-right: 3px;
+	border: 1px solid #ecffec;
+	position: relative;
+}
+#menu ul
+{
+	position: absolute;
+	top: 25px;
+	left: -1px;
+	width: 200px;
+	padding: 0;
+	display: none;
+}
+#menu ul li
+{
+	float: none;
+	margin: 0;
+	padding: 0;
+	line-height: 15px;
+}
+#menu a:link, #menu a:visited
+{
+	display: block;
+	font-family: Tahoma;
+	font-size: 0.75em;
+	font-weight: bold;
+	text-align: left;
+	text-decoration: none;
+	color: white;
+	padding: 5px;
+}
+#menu li:hover
+{
+	background-color: white;
+  border: 1px solid #000;
+}
+
+#menu li:hover a
+{
+  color: darkblue;
+}
+
+
+#menu li:hover ul
+{
+	display: block;
+}
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+}
+
+@media (min-width: 1500px){
+  main {
+    padding-left:15%;
+    padding-right:15%;
+  }
+}
+
+
+main .top {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+main .mid {
+  grid-column: 1 / 3;
+  grid-row: 2;
+}
+
+main .gallery {
+  display: block;
+  position: relative;
+  margin: 0;
+  object-fit: contain;
+}
+
+.gallery figure {
+  object-fit: contain;
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  animation: change 20s infinite;
+}
+
+.gallery figure:nth-last-of-type(2) {
+  animation-delay: 5s;
+	opacity: 0;
+}
+
+.gallery figure:nth-last-of-type(3) {
+  animation-delay: 10s;
+	opacity: 0;
+}
+
+.gallery figure:nth-last-of-type(4) {
+  animation-delay: 15s;
+	opacity: 0;
+}
+
+.gallery figure:nth-last-of-type(5) {
+  animation-delay: 20s;
+	opacity: 0;
+}
+
+.gallery figure:nth-last-of-type(6) {
+  animation-delay: 25s;
+	opacity: 0;
+}
+
+.gallery figure:nth-last-of-type(7) {
+  animation-delay: 30s;
+	opacity: 0;
+}
+
+.gallery figure:nth-last-of-type(8) {
+  animation-delay: 35s;
+	opacity: 0;
+}
+
+@keyframes change {
+  0% {opacity: 0;}
+  20% {opacity: 1;}
+  40% {opacity: 1;}
+  60% {opacity: 0;}
+  100% {opacity: 0;}
+}
+
+.gallery figure:last-of-type {
+  position: relative;
+}
+
+.gallery figcaption {
+  position: absolute;
+  left: 1em;
+  bottom: 0.5em;
+  z-index: 2;
+}
+
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+main .midright {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+main .midleft {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+main .botright {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+main .botleft {
+  grid-column: 1;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 1fr, 1fr;
+  grid-template-rows: 1fr, 1fr;
+}
+
+main .botleft .bookcover {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+}
+main .botleft .bookcover img {
+  object-fit: cover;
+  width: 100%;
+}
+
+main .botleft .text {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+main .botleft .register {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+main .botleft .info {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+footer {
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: black 4px;
+  border-top-style: groove
+}
+
+footer .address {
+  grid-column: 1;
+}
+
+footer .links {
+  grid-column: 2;
+}
