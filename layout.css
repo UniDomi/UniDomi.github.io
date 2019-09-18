@@ -161,6 +161,15 @@ main .mid {
   grid-row: 2;
 }
 
+main .right {
+  grid-column: 2;
+}
+
+main .left {
+  grid-column: 1;
+  grid-row: 1;
+}
+
 main .gallery {
   display: inline-block;
   position: relative;
